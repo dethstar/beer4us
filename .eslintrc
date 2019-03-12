@@ -1,0 +1,10 @@
+{
+  "extends": "airbnb-base",
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "root": ["./src"]
+      }
+    }
+  }
+}
