@@ -5,15 +5,15 @@ dotenv.config();
 
 mongoose
   .connect(
-    process.env.mongoose,
+    String(process.env.MONGO),
     { useNewUrlParser: true },
   )
   .catch(err => console.log(err));
 
 const brewerydbAPI = {
   sandbox: {
-    url: process.env.BREWERYDB_SANDBOX_URL,
-    token: process.env.BREWERYDB_SANDBOX_TOKEN,
+    url: String(process.env.BREWERYDB_SANDBOX_URL),
+    token: String(process.env.BREWERYDB_SANDBOX_TOKEN),
   },
 };
 
