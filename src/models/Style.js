@@ -61,8 +61,19 @@ const findOrCreate = async function findOrCreate(id, styleObj, categoryID) {
   return style;
 };
 
+const onStyleResponse = async function (style) {
+  let category = null;
+  let categoryID = null;
+  if (style.category) {
+    // category = Category.findOrCreate(style.category.id, style.category);
+    categoryID = style.category.id
+  }
+  this.findOrCreate(style.id, style, categoryID);
+};
+
 styleSchema.statics = {
   findOrCreate,
+  onStyleResponse
 };
 
 const Style = mongoose.model('Style', styleSchema);
